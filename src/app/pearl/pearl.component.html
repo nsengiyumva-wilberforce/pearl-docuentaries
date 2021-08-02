@@ -1,0 +1,42 @@
+<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="1000">
+      <img src="../assets/images/mabira.jpg" class="d-block w-100" alt="mabira forest">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Mabira Forest</h5>
+        <p>It is the largest forest in Uganda</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000" *ngFor="let image of images.splice(1, 2)">
+      <img [src]="image.source" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{image.title}}</h5>
+        <p>{{image.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main-title">
+  <h1>{{title | uppercase}}</h1>
+</div>
+
+<div class="d-flex flex-row justify-content-around flex-nowwrap pb-auto">
+<div class="card ms-5 mb-sm-1 features" *ngFor="let feature of features">
+  <div class="card-body">
+    <h5 class="card-title">{{feature.title}}</h5>
+    <p class="card-text">{{feature.description}}</p>
+  </div>
+</div>
+</div>
+<div class="cultures text-light text-center mt-4">
+  <h4>Cultures and crafts</h4>
+</div>
+<div class="d-flex flex-row flex-wrap">
+<div class="card ms-5 me-5 m-3" style="width: 18rem;" *ngFor="let culture of cultures">
+  <img [src]="culture.source" class="card-img-top" alt="bafumbira">
+  <div class="card-body">
+    <h5 class="card-title">{{culture.title}}</h5>
+    <p class="card-text">{{culture.desc}}</p>
+  </div>
+</div>
+</div>
